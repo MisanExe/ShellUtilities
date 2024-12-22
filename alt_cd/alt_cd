@@ -1,0 +1,21 @@
+#!/bin/sh
+
+
+#call cd and redirect args to main
+
+#dir name
+dir_index=$1
+
+args=$(ls)
+
+res=$(build/./main $dir_index $args)
+
+
+if [ $? -eq 0 ]; then 
+	echo "successful"
+   	echo $res
+else
+	echo "failed"
+fi
+
+#cd 
