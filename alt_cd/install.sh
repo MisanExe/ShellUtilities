@@ -12,6 +12,20 @@ bash_file="alt_cd"
 #program library directory name
 prog_dir="alt_cd"
 
+############
+# Run Make
+############
+cd build
+make
+#check result
+if [ $? -eq 0 ]; then 
+	cd ..
+	echo "built $bin_file"
+else
+	echo "unable to build automatically. Go to build directory and run make"
+	exit 1
+fi
+#############
 
 #create folder in /usr/local/lib/alt_cd
 if [ -d $sys_local_lib/$prog_dir ]; then
@@ -59,5 +73,4 @@ if [ $? -eq 0 ]; then
 else
 	echo "installation failed!"
 fi
-
 

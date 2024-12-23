@@ -13,6 +13,22 @@ bash_file="alt_ls"
 prog_dir="alt_ls"
 
 
+#############
+#	Run Make 
+#############
+
+#navigate to build folder
+cd build
+make
+#check result
+if [ $? -eq 0 ]; then 
+	cd ..
+else
+	echo "unable to build automatically. go to build directory and run make"
+	exit 1
+fi
+############
+
 #create folder in /usr/local/lib/alt_ls
 if [ -d $sys_local_lib/$prog_dir ]; then
 	echo "Directory already exits"
