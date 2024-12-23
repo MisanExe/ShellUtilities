@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	//index the arguments
 	std::string args[argc+1];
 	int j = 1;
-	for(int i = 2; i < argc; i++)
+	for(int i = 1; i < argc; i++)
 	{
 		nextLine(j);
 		std::cout<<argv[i]<<"["<<j<<"]\t";
