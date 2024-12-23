@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	try
 	{
 		int j = 0;
-		for(int i = 2; i<argc; i++)
+		for(int i = 1; i<argc; i++)
 		{
 			arg2[j].assign( argv[i]);
 			j++;

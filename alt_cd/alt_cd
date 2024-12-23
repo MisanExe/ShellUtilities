@@ -23,9 +23,7 @@ else
 fi
 
 
-if [ $? -eq 0 ]; then 
-	echo "successful"
-else
+if [ $? -ne 0 ]; then 
 	echo "failed"
 fi
 
@@ -35,7 +33,7 @@ if [ -z "$res" ]; then
 	exit 1
 fi
 
-echo "it should cd into $res"
+echo "cd $res"
 
 
 if [ -d ./$res ]; then 
