@@ -7,9 +7,9 @@ using and integer index as opposed to typing out directories with long names.
 
 ## Dependencies
 ### install make
-### insrall g++
+### install g++
 
-## to do 
+## todo 
 dependency checking in install script
 
 ## Getting started
