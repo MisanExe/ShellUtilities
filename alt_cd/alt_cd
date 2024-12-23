@@ -1,21 +1,48 @@
 #!/bin/sh
 
-
 #call cd and redirect args to main
 
 #dir name
 dir_index=$1
 
+#lib location
+lib_loc=/usr/local/lib/alt_cd
+#lib file name
+lib_bin_id="main"
+
 args=$(ls)
 
-res=$(build/./main $dir_index $args)
+if [ -f build/$lib_bin_id ]; then
+
+	res=$(build/./main $dir_index $args)
+	
+elif [ -f $lib_loc/$lib_bin_id ]; then 
+	res=$($lib_loc/./$lib_bin_id $dir_index $args)
+else
+	echo"binary file main cannot be found"
+fi
 
 
 if [ $? -eq 0 ]; then 
 	echo "successful"
-   	echo $res
 else
 	echo "failed"
 fi
 
-#cd 
+#check if the retured value is even a string
+if [ -z "$res" ]; then 
+	echo "no directory found"
+	exit 1
+fi
+
+echo "it should cd into $res"
+
+
+if [ -d ./$res ]; then 
+	cd "$res"
+else
+	echo "file in selected index : $dir_index is not a directory"
+	exit 1
+fi
+
+exec $SHELL

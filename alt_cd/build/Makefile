@@ -2,7 +2,7 @@
 
 CC=g++
 
-CFLAGS=-w -g -I..
+CFLAGS=-g -I..
 
 all:
 	$(CC) $(CFLAGS) ../main.cpp -o main
