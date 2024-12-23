@@ -12,11 +12,13 @@ args=$(ls)
 #check if file exist in debug verison 
 if [ -f build/$lib_bin_id ]; then 
 	
-	res=$(build/./alt_ls $args)
-	echo $res
+	#res=$(build/./alt_ls $args)
+	build/./alt_ls $args
+	#echo $res
 elif [ -f $lib_loc/$lib_bin_id ]; then
-	res=$($lib_loc/./alt_ls $args)
-	echo $res
+	#res=$($lib_loc/./alt_ls $args)
+	$lib_loc/./alt_ls $args
+	#echo $res
 else
 	echo "cannot find binary file"
 	exit 1
