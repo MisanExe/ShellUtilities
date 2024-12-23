@@ -2,7 +2,7 @@
 
 ## alternate cd and ls
 ##
-alternate ls lists directories and files alongside their index allowing user to change directory
+Alternate ls lists directories and files alongside their index allowing user to change directory
 using and integer index as opposed to typing out directories with long names.
 
 ## Dependencies
